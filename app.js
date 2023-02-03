@@ -58,3 +58,28 @@ function displayInitials(user) {
   return `Hello ${firstNameLetter}.${lastNameLetter}`;
 }
 displayInitials({ firstName: 'Have', lastName: 'Samuel' });
+
+// try {
+//   console.log('INSIDE TRY')
+//   undefined.pop() //This is results in  an error
+// } catch (e) {
+// // BUT WE CATCH IT!
+//   console.log('OH NO ERROR!')
+//   console.log(e);
+// } finally {
+//   console.log('INSIDE FINALLY!');
+// }
+// console.log('Did we makke it!!')
+
+
+try {
+  console.log('INSIDE TRY');
+  undefined.pop(); //This is results in  an error
+// } catch (e) {
+//   // BUT WE CATCH IT!
+//   console.log('OH NO ERROR!');
+//   console.log(e);
+} finally {
+  console.log('INSIDE FINALLY!');
+}
+console.log('Did we makke it!!');
