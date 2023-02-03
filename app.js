@@ -72,14 +72,50 @@ displayInitials({ firstName: 'Have', lastName: 'Samuel' });
 // console.log('Did we makke it!!')
 
 
-try {
-  console.log('INSIDE TRY');
-  undefined.pop(); //This is results in  an error
-// } catch (e) {
-//   // BUT WE CATCH IT!
-//   console.log('OH NO ERROR!');
-//   console.log(e);
-} finally {
-  console.log('INSIDE FINALLY!');
+// try {
+//   console.log('INSIDE TRY');
+//   undefined.pop(); //This is results in  an error
+// // } catch (e) {
+// //   // BUT WE CATCH IT!
+// //   console.log('OH NO ERROR!');
+// //   console.log(e);
+// } finally {
+//   console.log('INSIDE FINALLY!');
+// }
+// console.log('Did we makke it!!');
+
+
+
+// try {
+//   throw new TypeError ('I don\'t like you doig that.');
+//   // undefined.pop();
+// } catch (err) {
+//   console.log('What kind of error', err.name);
+//   console.log('What is the message?', err.message);
+//   console.log('Where did it happen?', err.stack)
+// }
+
+
+function DataError(message) {
+  this.message = message;
+  this.name = 'DataError';
 }
-console.log('Did we makke it!!');
+
+function getMonthName(mo) {
+  if (typeof mo !== 'number') {
+    throw new DataError('Month numder must be a number!');
+  }
+  mo = mo - 1; //Adjust month number for array index (1 = jan, 12 = Dec)
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  if (months[mo]) {
+    return months[mo];
+  } else {
+    throw new DataError('Invalid Month!!');
+  }
+}
+
+try {
+  getMonthName()
+} catch (e) {
+  console.log('ERROR!', e);
+}
