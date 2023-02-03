@@ -25,3 +25,13 @@ for (let i = 0; i < grades.length; i++) {
   console.log('sum', sum);
 }
 let avg = sum / grades.length;
+
+// TRY & CATCH
+try {
+  functionThatDoesNtoWork();
+} catch (e) {
+  console.log('OH ON ERRORS!');
+  console.log(e);
+}
+
+console.log('DID WE MAKE IT!')
