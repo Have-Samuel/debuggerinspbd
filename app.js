@@ -15,3 +15,13 @@ function hasEnoughMoneyToBuy(price, qty, balance) {
 // hasEnoughMoneyToBuy(10, 6, 80)
 // hasEnoughMoneyToBuy(30, 3, 100)
 // hasEnoughMoneyToBuy(200.5, 3, 600.9)
+
+let grades = [99, 98, 75, 54, 66, 90, 81];
+let sum = 0;
+for (let i = 0; i < grades.length; i++) {
+  sum += grades[i];
+  console.log('i', i);
+  console.log('grade', grades[i]);
+  console.log('sum', sum);
+}
+let avg = sum / grades.length;
